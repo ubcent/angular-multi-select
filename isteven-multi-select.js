@@ -431,7 +431,9 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                     }
 
                     // we refresh input model as well
-                    var inputModelIndex = $scope.filteredModel[ index ][ $scope.indexProperty ];                                        
+                    var inputModelIndex = $scope.inputModel.findIndex(function(element, idx, array) {
+                        return typeof element != 'undefined' && element._id == $scope.filteredModel[ index ]._id;
+                    });                                       
                     $scope.inputModel[ inputModelIndex ][ $scope.tickProperty ] = $scope.filteredModel[ index ][ $scope.tickProperty ];                    
                 }                                  
 
