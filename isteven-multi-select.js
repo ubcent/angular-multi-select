@@ -1082,7 +1082,7 @@ angular.module( 'isteven-multi-select', ['ng'] ).directive( 'istevenMultiSelect'
                 // selection items
                 '<div class="checkBoxContainer">'+
                     '<div '+
-                        'ng-repeat="item in filteredModel track by _id | filter:removeGroupEndMarker" class="multiSelectItem"'+
+                        'ng-repeat="item in filteredModel track by item._id | filter:removeGroupEndMarker" class="multiSelectItem"'+
                         'ng-class="{selected: item[ tickProperty ], horizontal: orientationH, vertical: orientationV, multiSelectGroup:item[ groupProperty ], disabled:itemIsDisabled( item )}"'+
                         'ng-click="syncItems( item, $event, $index );" '+
                         'ng-mouseleave="removeFocusStyle( tabIndex );"> '+
